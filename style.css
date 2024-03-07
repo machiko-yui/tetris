@@ -1,0 +1,19 @@
+
+
+
+.game-screen {
+    top: 750px;
+}
+
+.block {
+    height: 34px;
+    width: 34px;
+    background-color: rgb(123, 104, 238);
+    border:white solid 1px;
+    position: absolute;
+    display: inline-block;
+}
+
+
+
+
