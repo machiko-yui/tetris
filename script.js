@@ -92,10 +92,16 @@ let card_x = card.offsetLeft;
 let card_y = card.offsetTop;
 console.log("card要素の座標はx:" + card_x + "、y:" + card_y + "です。");
 
+
+
+
 //おじゃまブロック
 let wall_block = document.getElementById("wall_block");
 let wall_x = box.offsetLeft;
 let wall_y = box.offsetTop;
+wall_block.style.visibility = 'visible';
+
+let wall_box = document.getElementById("wall_box");
 
 for (let i = 0; i <= 3; i++) {
     wall_block.id = "wall_block" + i;
@@ -103,8 +109,38 @@ for (let i = 0; i <= 3; i++) {
     let clone_wall = wall_block.cloneNode(true);
     wall_block.after(clone_wall);
     //座標の移動
-    block_box.insertBefore(clone_wall,clone_wall[i]);
+    wall_box.insertBefore(clone_wall,clone_wall[i]);
 }
+
+
+let wall_block0 = document.getElementById("wall_block0");
+console.log(wall_block0);
+let wall0_x = wall_block0.offsetLeft;
+let wall0_y = wall_block0.offsetTop;
+console.log("wall要素の座標はx:" + wall0_x + "、y:" + wall0_y + "です。");
+wall_block0.style.left = wall0_x + 9 * 35 + 'px';
+wall_block0.style.top = wall0_y + 21 * 35 + 'px';
+
+
+let wall_block1 = document.getElementById("wall_block1");
+let wall1_x = wall_block0.offsetLeft;
+let wall1_y = wall_block0.offsetTop;
+wall_block1.style.top = wall0_y + 21 * 35 + 'px';
+
+
+let wall_block2 = document.getElementById("wall_block2");
+let wall2_x = wall_block0.offsetLeft;
+let wall2_y = wall_block0.offsetTop;
+wall_block2.style.left = wall0_x + 6 * 35 + 'px';
+wall_block2.style.top = wall0_y + 7 * 35 + 'px';
+
+
+let wall_block3 = document.getElementById("wall_block3");
+let wall3_x = wall_block0.offsetLeft;
+let wall3_y = wall_block0.offsetTop;
+wall_block3.style.visibility = 'collapse';
+
+wall_block.style.visibility = 'collapse';
 
 //clone_wall.style.left = wall_x + 9 * 35 + 'px';
 //clone_wall.style.top = wall_y + 21 * 35 + 'px';
