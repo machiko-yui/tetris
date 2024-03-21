@@ -153,7 +153,9 @@ let field_top = 22;*/
 
 //drawField();
 
-
+//当たり判定
+//if ()
+//let check_move = 
 
 
 //ブロックの移動(アロー関数)
@@ -166,25 +168,40 @@ document.addEventListener ("keydown", (e) => {
     if (e.keyCode === 37) {
         //左
         //if (check_move === turu) {
+        if (card_x >= 35) {
             push_move();
             card.style.left = card_x - 35 + 'px';
             console.log(card_x);
+            card_x = card.offsetLeft;
+        }
         //}
     }
     if (e.keyCode === 38) {
         //上
-        push_move();
-        card.style.top = card_y - 35 + 'px';
+        if (card_y >= 0) {
+            push_move();
+            card.style.top = card_y - 35 + 'px';
+            console.log(card_y);
+            card_y = card.offsetTop;
+        }
     }
     if (e.keyCode === 39) {
         //右
-        push_move();
-        card.style.left = card_x + 35 + 'px';
+        if (card_x <= 210) {
+            push_move();
+            card.style.left = card_x + 35 + 'px';
+            console.log(card_x);
+            card_x = card.offsetLeft;
+        }
     }
     if (e.keyCode === 40) {
         //下
-        push_move();
-        card.style.top = card_y + 35 + 'px';
+        if (card_y <= 630) {
+            push_move();
+            card.style.top = card_y + 35 + 'px';
+            console.log(card_y);
+            card_y = card.offsetTop;
+        }
     }
     if (e.keyCode === 32) {
         //回転
